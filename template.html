@@ -8,13 +8,81 @@
 
     <!-- Don't use this in production: -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="style.css" rel="stylesheet">
   </head>
   <body>
     <div id="root"></div>
     <script type="text/babel">
 
+    function Heading(){
+        return(
+            <div>
+                <div class="d-flex">
+                <div>
+                    <img class="img-1" src="images/img1.jpg"/>
+                </div>
+                <div class="pl-5">
+                    <h2> Heading </h2>
+                    <strong> Subheading</strong>
+                    <div class="mt-5">
+                        <button class="button"> Like Now </button>
+                    </div>
+                    
+                </div>
+            </div>
+            </div>
+        )
+    }
+
+    class Counter extends React.Component{
+        render(){
+            return(
+                <div>
+                    <div class="box-count text-center">
+               <div class="d-flex">
+                    <div class="w-33">
+                        <h2> 35</h2>
+                        <h4> Upvotes </h4>
+                    </div>
+                    <div class="pl-5 w-33">
+                        <h2> 35</h2>
+                        <h4> Upvotes </h4>
+                    </div>
+                    <div class="pl-5 w-33">
+                        <h2> 35</h2>
+                        <h4> Upvotes </h4>
+                    </div>
+               </div>
+
+            </div>
+                </div>
+            )
+        }
+    }
+
+    class Buttons extends React.Component{
+        render(){
+            return(
+                <div>
+                    <div class="mt-10">
+                <a href="" class="button-lg bg-green text-white"> View Post </a>
+
+                <a href=""  class="button-lg"> View Dashboard </a>
+
+            </div>
+                </div>
+            )
+        }
+    }
+
       ReactDOM.render(
-        <h1>Hello reqrreq </h1>,
+          <div>
+            <div class="box">
+       <Heading/>
+       <Counter/>
+       <Buttons/>
+       </div>
+        </div>,
         document.getElementById('root')
       );
       
