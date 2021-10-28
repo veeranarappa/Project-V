@@ -2,13 +2,14 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World</title>
+    <title> React Card </title>
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 
-    <!-- Don't use this in production: -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
   </head>
   <body>
     <div id="root"></div>
@@ -19,13 +20,13 @@
             <div>
                 <div class="d-flex">
                 <div>
-                    <img class="img-1" src="images/img1.jpg"/>
+                    <img class="card-img" src="images/img1.jpg"/>
                 </div>
                 <div class="pl-5">
-                    <h2> Heading </h2>
-                    <strong> Subheading</strong>
+                    <div class="card-heading"> Ventana </div>
+                    <div class="card-subheading"> Web Applications Ui Kit </div>
                     <div class="mt-5">
-                        <button class="button"> Like Now </button>
+                        <button class="card-button"> Like Now </button>
                     </div>
                     
                 </div>
@@ -41,19 +42,18 @@
                     <div class="box-count text-center">
                <div class="d-flex">
                     <div class="w-33">
-                        <h2> 35</h2>
-                        <h4> Upvotes </h4>
+                        <div class="count"> 27</div>
+                        <div class="count-text"> <i class="fa fa-thumbs-up"></i> Upvotes </div>
                     </div>
-                    <div class="pl-5 w-33">
-                        <h2> 35</h2>
-                        <h4> Upvotes </h4>
+                    <div class="w-33">
+                        <div class="count"> 5</div>
+                        <div class="count-text"> <i class="fa fa-commenting-o"></i> Comments </div>
                     </div>
-                    <div class="pl-5 w-33">
-                        <h2> 35</h2>
-                        <h4> Upvotes </h4>
+                    <div class="w-33">
+                        <div class="count"> 0</div>
+                        <div class="count-text"> <i class="fa fa-star"></i> Reviews </div>
                     </div>
                </div>
-
             </div>
                 </div>
             )
@@ -64,24 +64,40 @@
         render(){
             return(
                 <div>
-                    <div class="mt-10">
-                <a href="" class="button-lg bg-green text-white"> View Post </a>
-
-                <a href=""  class="button-lg"> View Dashboard </a>
-
+                    <div class="mt-20">
+                <button class="view-btn"> View Post</button>
+                <button class="view-btn1 margin-left-btn"> View Dashboard</button>
             </div>
                 </div>
             )
         } 
     }
 
+    function Footer(){
+        return(
+            <div> 
+                <footer class="footer mt-100">
+            <div class="text-center">
+                <h3> Designed By Veera</h3>
+            </div>
+
+            <div class="text-center">
+                <h4> GitHub Link <a href="https://github.com/veeranarappa/Project-V" target="_blank">Click Here </a></h4>
+                <h4> Netlify Link <a href="https://flamboyant-varahamihira-a7a18d.netlify.app/" target="_blank">Click Here </a></h4>
+            </div>
+        </footer>    
+            </div>
+        )
+    }
+
       ReactDOM.render(
-          <div>
-            <div class="box">
-       <Heading/>
-       <Counter/>
-       <Buttons/>
-       </div>
+        <div>
+            <div class="card">
+            <Heading/>
+            <Counter/>
+            <Buttons/>
+            </div>
+            <Footer/>
         </div>,
         document.getElementById('root')
       );
@@ -89,3 +105,4 @@
     </script>
   </body>
 </html>
+

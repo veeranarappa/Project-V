@@ -1,20 +1,46 @@
 
-.box{
+body{
+    background-color: #e3ebf3;
+    font-family: 'Mulish', sans-serif;
+    margin:0px;
+}
+.card{
     border:1px solid #ccc;
-    padding: 10px;
-    width:40%;
-    margin-left:30%;
+    padding: 30px;
+    width: 33%;
+    margin-left: 31%;
     border-radius: 10px;
+    background-color: #fff;
 }
  
 .d-flex{
     display: flex;
 }
 
-.img-1{
-    width:200px;
+.card-img{
+    width: 133px;
+    border: 10px solid #f0fff0;
+    border-radius: 20px;
 }
 
+.card-heading{
+    font-size: 28px;
+    font-weight: 600;
+    margin-top:10px;
+}
+.card-subheading{
+    font-size: 17px;
+}
+
+.card-button{
+    background-color: #11b3e5;
+    padding: 4px;
+    color:#fff;
+    font-size: 14px;
+    border-radius: 10px;
+    border:1px solid  #11b3e5;
+   
+}
 .button{
     background-color: green;
     color:#fff;
@@ -31,9 +57,38 @@
 }
 
 .box-count{
-    border:1px solid #ccc;
-    background-color: honeydew;
-    padding: 10px;
+    border:1px solid #f0f2f3e6;
+    background-color: #fbfcff;
+    padding: 20px 10px;
+}
+.view-btn{
+    width: 48%;
+    background-color: #0f1730;
+    border: 1px solid #0f1730;
+    color: #fff;
+    padding: 10px 0px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.view-btn1{
+    width: 48%;
+    background-color: #fff;
+    border: 1px solid #0f1730;
+    color: #000;
+    padding: 10px 0px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+
+.count{
+    font-size: 24px;
+    font-weight: 600;
+}
+.count-text{
+    font-size: 17px;
+    font-weight: 600;
 }
 
 .text-center{
@@ -52,8 +107,8 @@
    border-radius: 6px;
 }
 
-.mt-10{
-    margin:30px;
+.mt-20{
+    margin-top:20px;
 }
 
 .bg-green{
@@ -61,4 +116,40 @@
 }
 .text-white{
     color:#fff;
+}
+
+.margin-left-btn{
+    margin-left:2%;
+}
+
+.mt-100{
+    margin-top:100px;
+}
+
+.footer{
+    background-color: #000;
+    color:#fff;
+    padding: 30px;
+}
+
+.bg-color{
+    background-color:#529de0 ;
+}
+
+.input-box{
+    width: 87%;
+    height: 40px;
+}
+
+
+ul li{
+    list-style-type: none;
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+}
+
+ul{
+    padding-left: 0px;
 }

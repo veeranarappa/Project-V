@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body class="bg-color">
+    <div id="root"></div>
+    <script type="text/babel">
+    
+    class TodoApp extends React.Component{
+
+        constructor(props) {
+    super(props);
+    this.state = { items: [], text: '' };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+        render(){
+            return(
+                <div> 
+                    <h3> Todo App </h3>
+
+                    <form onSubmit={this.handleSubmit}>  
+                        <div class="input-group mb-3">
+                        <input type="text" id="new-todo"  onChange={this.handleChange} value={this.state.text} class="form-control"/>
+                        <div class="input-group-append">
+                        <button class="input-group-text"> + Add </button>
+                        </div>
+                    </div>
+                    </form>
+                    <TodoList items={this.state.items} />  
+                    <div class="row">
+                        <div class="col-md-8">
+                            You have {this.state.items.length } Records 
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-success btn-sm"> Clear All </button> 
+                        </div>
+                    </div>
+                    
+                </div>
+            )
+        }
+
+        handleChange(e) {
+    this.setState({ text: e.target.value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    if (this.state.text.length === 0) {
+      return;
+    }
+    const newItem = {
+      text: this.state.text,
+      id: Date.now()
+    };
+    this.setState(state => ({
+      items: state.items.concat(newItem),
+      text: ''
+    }));
+  }
+}
+    
+class TodoList extends React.Component {
+  render() {
+    return (
+      <ul>
+        {this.props.items.map(item => (
+          <li key={item.id}>{item.text}</li>
+        ))}
+      </ul>
+    );
+  }
+}
+
+ReactDOM.render(
+    <div class="card mt-20">
+  <TodoApp />
+  </div>,
+  document.getElementById('root')
+);
+      
+    </script>
+  </body>
+</html>
+
